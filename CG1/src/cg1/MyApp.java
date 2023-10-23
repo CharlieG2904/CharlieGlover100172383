@@ -12,3 +12,10 @@ class Song {
     private String title;
     private String artist;
     private int plays;
+
+    //This is definining the class "Song" , setting the plays to 0, entering the title as "title" & artist as "artist"
+    public Song(String title, String artist) {
+        this.title = title;
+        this.artist = artist;
+        this.plays = 0;
+    }
