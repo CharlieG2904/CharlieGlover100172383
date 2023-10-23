@@ -19,7 +19,7 @@ class Song {
         this.artist = artist;
         this.plays = 0;
     }
-    
+
 //These are the getters. Inputting Title, Artist, Plays    
     public String getTitle() {
         return title;
@@ -36,3 +36,14 @@ class Song {
     public void incrementPlays() {
         plays++;
     }
+
+    //This is a useful command that I have learnt to override a method in the superclass. This is converting the whole output to a string. 
+    @Override
+    public String toString() {
+        return title + " by " + artist + " (Plays: " + plays + ")";
+    }
+}
+
+//This section creates our class for the array that stores out title, artist and plays. Defining song list as private. 
+class MusicStreamingService {
+    private List<Song> songList;
