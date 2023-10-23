@@ -113,7 +113,7 @@ class MusicStreamingService {
         while (true) {
             System.out.println("|---------------------------------------------------------|");
             System.out.println("|                      Main Menu                          |");
-            System.out.println("|   \nOptions:                                            |");
+            System.out.println("|     Options:                                            |");
             System.out.println("|     1. Add a new song                                   |");
             System.out.println("|     2. Remove a song                                    |");
             System.out.println("|     3. Print all songs                                  |");
