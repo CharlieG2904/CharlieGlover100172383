@@ -60,7 +60,7 @@ class MusicStreamingService {
         System.out.println("Song added: " + song);
     }
 
-//This is the remove song function. Allowing the user to input the song in the array to remove. If the user inputs a song that is not available then it will display " Song not found"
+//This is the remove song method. Allowing the user to input the song in the array to remove. If the user inputs a song that is not available then it will display " Song not found"
 //The iterator is used here to loop the method. 
     public void removeSong(String title) {
         Iterator<Song> iterator = songList.iterator();
@@ -73,4 +73,22 @@ class MusicStreamingService {
             }
         }
         System.out.println("Song not found: " + title);
+    }
+
+//This method is quite simple. It allows the user to output all the songs in the array that have been inputted. 
+    public void printAllSongs() {
+        System.out.println("All songs:");
+        for (Song song : songList) {
+            System.out.println(song);
+        }
+    }
+
+//This method is my unique method that can list the songs that have been played over a certain number of times. 
+    public void printSongsOverPlays(int playsThreshold) {
+        System.out.println("Songs with more than " + playsThreshold + " plays:");
+        for (Song song : songList) {
+            if (song.getPlays() > playsThreshold) {
+                System.out.println(song);
+            }
+        }
     }
