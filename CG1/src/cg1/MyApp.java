@@ -59,3 +59,18 @@ class MusicStreamingService {
         songList.add(song);
         System.out.println("Song added: " + song);
     }
+
+//This is the remove song function. Allowing the user to input the song in the array to remove. If the user inputs a song that is not available then it will display " Song not found"
+//The iterator is used here to loop the method. 
+    public void removeSong(String title) {
+        Iterator<Song> iterator = songList.iterator();
+        while (iterator.hasNext()) {
+            Song song = iterator.next();
+            if (song.getTitle().equals(title)) {
+                iterator.remove();
+                System.out.println("Song removed: " + song);
+                return;
+            }
+        }
+        System.out.println("Song not found: " + title);
+    }
