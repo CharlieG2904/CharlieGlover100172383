@@ -1,21 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package cg1;
-
-/**
- *
- * @author 100172383
- */
-public class MyApp {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.print("Hello world");
-    }
-    
-}
+//Importing my array list to store the songs, artist and plays.
+//Importing the iterator to loop the programme
+//Importing the List for the array use
+//Importing Scanner for turning user input to basic data (int,string)
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
