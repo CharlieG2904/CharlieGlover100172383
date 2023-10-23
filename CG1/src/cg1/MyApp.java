@@ -19,3 +19,20 @@ class Song {
         this.artist = artist;
         this.plays = 0;
     }
+    
+//These are the getters. Inputting Title, Artist, Plays    
+    public String getTitle() {
+        return title;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public int getPlays() {
+        return plays;
+    }
+
+    public void incrementPlays() {
+        plays++;
+    }
