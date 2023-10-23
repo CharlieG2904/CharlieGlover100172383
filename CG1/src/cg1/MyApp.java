@@ -92,3 +92,21 @@ class MusicStreamingService {
             }
         }
     }
+
+//This is where I have learnt to use the scanner import, this section is defining the musicstreamingservice 
+    public static void main(String[] args) {
+        MusicStreamingService streamingService = new MusicStreamingService();
+        Scanner scanner = new Scanner(System.in);
+
+    //looping until an input between 1-5 is entered then displays and runs the correct method that is related
+        while (true) {
+            System.out.println("\nOptions:");
+            System.out.println("1. Add a new song");
+            System.out.println("2. Remove a song");
+            System.out.println("3. Print all songs");
+            System.out.println("4. Print songs with plays over a threshold");
+            System.out.println("5. Exit");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();  //the new character
+
