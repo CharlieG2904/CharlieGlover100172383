@@ -1,3 +1,14 @@
+/*
+ * MyApp.java 
+ * 
+ * Date: 23/10/2023
+ * 
+ * Author: Charlie Glover
+ * 
+ */
+
+
+package cg1; 
 //Importing my array list to store the songs, artist and plays.
 //Importing the iterator to loop the programme
 //Importing the List for the array use
@@ -100,12 +111,15 @@ class MusicStreamingService {
 
     //looping until an input between 1-5 is entered then displays and runs the correct method that is related
         while (true) {
-            System.out.println("\nOptions:");
-            System.out.println("1. Add a new song");
-            System.out.println("2. Remove a song");
-            System.out.println("3. Print all songs");
-            System.out.println("4. Print songs with plays over a threshold");
-            System.out.println("5. Exit");
+            System.out.println("|---------------------------------------------------------|");
+            System.out.println("|                      Main Menu                          |");
+            System.out.println("|   \nOptions:                                            |");
+            System.out.println("|     1. Add a new song                                   |");
+            System.out.println("|     2. Remove a song                                    |");
+            System.out.println("|     3. Print all songs                                  |");
+            System.out.println("|     4. Print songs with plays over a threshold          |");
+            System.out.println("|     5. Exit                                             |");  
+            System.out.println("|---------------------------------------------------------|");                                          
 
             int choice = scanner.nextInt();
             scanner.nextLine();  //the new character
