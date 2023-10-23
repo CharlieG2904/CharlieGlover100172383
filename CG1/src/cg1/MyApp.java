@@ -110,3 +110,41 @@ class MusicStreamingService {
             int choice = scanner.nextInt();
             scanner.nextLine();  //the new character
 
+//I have used switch techniques to basically run through the different outcomes of the program, this is not ideal in larger programs but for this it works.
+            switch (choice) {
+//First scenario, "1" is entered then you input the artist and the title
+                case 1:
+                    System.out.print("Enter song title: ");
+                    String title = scanner.nextLine();
+                    System.out.print("Enter artist: ");
+                    String artist = scanner.nextLine();
+                    streamingService.addSong(title, artist);
+                    break;
+//This is the second scenario "2" removing songs. Enter the song you want to remove
+                case 2:
+                    System.out.print("Enter the title of the song to remove: ");
+                    String titleToRemove = scanner.nextLine();
+                    streamingService.removeSong(titleToRemove);
+                    break;
+//This is the third scenario "3" printing the list of all the songs that have been inputted
+                case 3:
+                    streamingService.printAllSongs();
+                    break;
+//This is the fourth scenario "4" printing the songs over a certain number of plays. 
+                case 4:
+                    System.out.print("Enter the minimum number of plays: ");
+                    int playsThreshold = scanner.nextInt();
+                    streamingService.printSongsOverPlays(playsThreshold);
+                    break;
+//Exiting the program
+                case 5:
+                    System.out.println("Goodbye!");
+                    System.exit(0);
+//This is displayed when an incorrect value is entered. 
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
+
