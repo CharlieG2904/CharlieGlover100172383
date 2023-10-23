@@ -47,3 +47,15 @@ class Song {
 //This section creates our class for the array that stores out title, artist and plays. Defining song list as private. 
 class MusicStreamingService {
     private List<Song> songList;
+
+//Creating the array to store our inputted title,artist and plays.
+    public MusicStreamingService() {
+        songList = new ArrayList<>();
+    }
+
+//This function is inputting the song title and artist and adding this to the array. Displaying "song added" & the song that has been inputted
+    public void addSong(String title, String artist) {
+        Song song = new Song(title, artist);
+        songList.add(song);
+        System.out.println("Song added: " + song);
+    }
