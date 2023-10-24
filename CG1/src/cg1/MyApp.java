@@ -105,13 +105,19 @@ class MusicStreamingService {
 
 //This method is my unique method that can list the songs that have been played over a certain number of times. 
     public void printSongsOverPlays(int playsThreshold) {
-        System.out.println("Songs with more than " + playsThreshold + " plays:");
-        for (Song song : songList) {
-            if (song.getPlays() > playsThreshold) {
-                System.out.println(song);
-            }
+    System.out.println("Songs with more than " + playsThreshold + " plays:");
+    System.out.println("--------------------------------------------------");
+    System.out.printf("| %-30s | %-30s | %-10s |\n", "Title", "Artist", "Plays");
+    System.out.println("--------------------------------------------------");
+
+    for (Song song : songList) {
+        if (song.getPlays() > playsThreshold) {
+            System.out.printf("| %-30s | %-30s | %-10d |\n", song.getTitle(), song.getArtist(), song.getPlays());
         }
     }
+
+    System.out.println("--------------------------------------------------");
+}
 
 //Scanner allowing user to take input from console. defining the musicstreamingservice 
         public static void main(String[] args) {
