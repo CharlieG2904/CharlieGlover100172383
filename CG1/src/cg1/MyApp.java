@@ -114,9 +114,19 @@ class MusicStreamingService {
     }
 
 //Scanner allowing user to take input from console. defining the musicstreamingservice 
-    public static void main(String[] args) {
-        MusicStreamingService streamingService = new MusicStreamingService();
-        Scanner scanner = new Scanner(System.in);
+        public static void main(String[] args) {
+            MusicStreamingService streamingService = new MusicStreamingService();
+            Scanner scanner = new Scanner(System.in);
+            streamingService.addSong("Strangers", "Kenya Grace", 100);
+            streamingService.addSong("Prada", "casso & raye", 50);
+            streamingService.addSong("Greedy", "Tate MCrae", 75);
+            streamingService.addSong("First person shooter", "Drake & JCole", 120);
+            streamingService.addSong("IDGAF", "Drake", 90);
+            streamingService.addSong("Virginia Beach", "Drake", 60);
+            streamingService.addSong("Water", "Tyla", 110);
+            streamingService.addSong("Adore U", "Fred Again", 70);
+            streamingService.addSong("Disconnect", "Becky Hill", 85);
+            streamingService.addSong("Asking", "Sonny Fodera", 95);
 
 //looping until an input between 1-5 is entered then displays and runs the correct method that is related, displayed as table
         while (true) {
