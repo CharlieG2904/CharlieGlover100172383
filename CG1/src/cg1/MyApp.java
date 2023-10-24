@@ -18,20 +18,20 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-//This section of the code defines the data types for the title & artist (strings) and the number of plays (integer)
+
 class Song {
     private String title;
     private String artist;
     private int plays;
 
-    //This is definining the class "Song" , setting the plays to 0, entering the title as "title" & artist as "artist"
-    public Song(String title, String artist) {
+//This is definining the class "Song" , setting the plays to 0, entering the title as "title" & artist as "artist"
+    public Song(String title, String artist ) {
         this.title = title;
         this.artist = artist;
         this.plays = 0;
     }
 
-//These are the getters. Inputting Title, Artist, Plays    
+//These are the getters. Declaring as public 
     public String getTitle() {
         return title;
     }
@@ -44,32 +44,35 @@ class Song {
         return plays;
     }
 
-    public void incrementPlays() {
-        plays++;
+    public void incrementPlays(int plays) {
+    this.plays += plays;
     }
 
-    //This is a useful command that I have learnt to override a method in the superclass. This is converting the whole output to a string. 
+
+//Overrides a method in the superclass. This is converting the whole output to a string and then formatting the output to display it as I want
     @Override
     public String toString() {
         return title + " by " + artist + " (Plays: " + plays + ")";
     }
 }
 
-//This section creates our class for the array that stores out title, artist and plays. Defining song list as private. 
+
 class MusicStreamingService {
     private List<Song> songList;
 
-//Creating the array to store our inputted title,artist and plays.
+//Creating the array to store our inputted title,artist and plays. This is named songList
     public MusicStreamingService() {
         songList = new ArrayList<>();
     }
 
 //This function is inputting the song title and artist and adding this to the array. Displaying "song added" & the song that has been inputted
-    public void addSong(String title, String artist) {
-        Song song = new Song(title, artist);
-        songList.add(song);
-        System.out.println("Song added: " + song);
+    public void addSong(String title, String artist, int plays) {
+    Song song = new Song(title, artist);
+    song.incrementPlays(plays); 
+    songList.add(song);
+    System.out.println("Song added: " + song);
     }
+
 
 //This is the remove song method. Allowing the user to input the song in the array to remove. If the user inputs a song that is not available then it will display " Song not found"
 //The iterator is used here to loop the method. 
@@ -104,27 +107,27 @@ class MusicStreamingService {
         }
     }
 
-//This is where I have learnt to use the scanner import, this section is defining the musicstreamingservice 
+//Scanner allowing user to take input from console. defining the musicstreamingservice 
     public static void main(String[] args) {
         MusicStreamingService streamingService = new MusicStreamingService();
         Scanner scanner = new Scanner(System.in);
 
-    //looping until an input between 1-5 is entered then displays and runs the correct method that is related
+//looping until an input between 1-5 is entered then displays and runs the correct method that is related, displayed as table
         while (true) {
             System.out.println("|---------------------------------------------------------|");
             System.out.println("|                      Main Menu                          |");
-            System.out.println("|     Options:                                            |");
-            System.out.println("|     1. Add a new song                                   |");
-            System.out.println("|     2. Remove a song                                    |");
-            System.out.println("|     3. Print all songs                                  |");
-            System.out.println("|     4. Print songs with plays over a threshold          |");
-            System.out.println("|     5. Exit                                             |");  
+            System.out.println("|      Options:                                           |");
+            System.out.println("|      1. Add a new song                                  |");
+            System.out.println("|      2. Remove a song                                   |");
+            System.out.println("|      3. Print all songs                                 |");
+            System.out.println("|      4. Print songs with plays over a threshold         |");
+            System.out.println("|      5. Exit                                            |");  
             System.out.println("|---------------------------------------------------------|");                                          
 
             int choice = scanner.nextInt();
             scanner.nextLine();  //the new character
 
-//I have used switch techniques to basically run through the different outcomes of the program, this is not ideal in larger programs but for this it works.
+//I have used switch techniques to basically run through the different outcomes of the program
             switch (choice) {
 //First scenario, "1" is entered then you input the artist and the title
                 case 1:
@@ -132,8 +135,11 @@ class MusicStreamingService {
                     String title = scanner.nextLine();
                     System.out.print("Enter artist: ");
                     String artist = scanner.nextLine();
-                    streamingService.addSong(title, artist);
+                    System.out.print("Enter number of plays: ");
+                    int plays = scanner.nextInt();
+                    streamingService.addSong(title, artist, plays);
                     break;
+
 //This is the second scenario "2" removing songs. Enter the song you want to remove
                 case 2:
                     System.out.print("Enter the title of the song to remove: ");
