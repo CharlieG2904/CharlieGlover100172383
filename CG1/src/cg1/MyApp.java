@@ -92,9 +92,15 @@ class MusicStreamingService {
 //This method is quite simple. It allows the user to output all the songs in the array that have been inputted. 
     public void printAllSongs() {
         System.out.println("All songs:");
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.printf("| %-30s | %-30s | %-10s |\n", "Title", "Artist", "Plays");
+        System.out.println("-----------------------------------------------------------------------");
+
         for (Song song : songList) {
-            System.out.println(song);
+            System.out.printf("| %-30s | %-30s | %-10d |\n", song.getTitle(), song.getArtist(), song.getPlays());
         }
+
+        System.out.println("-----------------------------------------------------------------------");
     }
 
 //This method is my unique method that can list the songs that have been played over a certain number of times. 
