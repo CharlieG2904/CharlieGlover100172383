@@ -174,8 +174,19 @@ class MusicStreamingService {
                     break;
 //This is the fourth scenario "4" printing the songs over a certain number of plays. 
                 case 4:
-                    System.out.print("Enter the minimum number of plays: ");
-                    int playsThreshold = scanner.nextInt();
+                    int playsThreshold = 0;
+                    boolean validInput = false;
+
+                    while (!validInput) {
+                        System.out.print("Enter the minimum number of plays: ");
+                        if (scanner.hasNextInt()) {
+                            playsThreshold = scanner.nextInt();
+                            validInput = true; 
+                        } else {
+                            System.out.println("Invalid input. Please enter a valid integer.");
+                            scanner.nextLine(); 
+                        }
+                    }
                     streamingService.printSongsOverPlays(playsThreshold);
                     break;
 //Exiting the program
